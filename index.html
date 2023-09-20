@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/5127414381.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Budget App</title>
 </head>
 <body>
-    <h1>Budget App</h1>
+    <section>
+        <div>
+            <h1><span>EXPENSE TRACKER</span><span><button class="reset-value" id="reset-value">Reset value</button></span></h1>
+        </div><br>
+
+        <!-- budget-form -->
+        <div>
+            <form action="" id="budget-form">
+                <h5>Please Enter Your Budget</h5>
+                <div>
+                    <input type="number" class="form-control" id="budget-input">
+                </div>
+                <button type="submit" class="btn" id="budget-submit">Calculate</button>
+            </form>
+        </div>
+
+        <!-- expense form -->
+        <div>
+            <form action="" id="expense-form">
+                <h5>Please Enter Your Expense</h5>
+                <div>
+                    <input type="number" class="form-control" id="expense-input">
+                </div>
+                <h5>Please Enter Your Expense Amount</h5>
+                <div>
+                    <input type="number" class="form-control" id="amount-input">
+                </div>
+                <button type="submit" class="btn" id="expense-submit">Add expense</button>
+            </form>
+        </div>
+    </section>
+
+
+    <section>
+        <div>
+            <h6>BUDGET</h6>
+            <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></i></span>
+            <h4><span>0</span><span>F</span></h4>
+        </div>
+    </section>
+
+
+    <section></section>
 </body>
 </html>
