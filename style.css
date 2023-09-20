@@ -83,3 +83,39 @@ h1 {
     width: 8rem;
     margin-bottom: 15px;
 }
+
+/* section two */
+.app-info {
+    display: flex;
+    text-align: center;
+}
+.app-info div {
+   margin: 12px;
+}
+.app-info div h6 {
+    font-size: 20px;
+ }
+ .app-info div span i {
+    font-size: 5rem;
+    color: var(--mainBlue);
+ }
+ .app-info div h4 {
+    font-size: 30px;
+    color: var(--mainGreen);
+ }
+ .app-info div .h4-2 {
+    color: var(--mainRed) !important;
+ }
+
+ .expense-list {
+    display: flex;
+ }
+ .expense-list h5 {
+    margin: 17px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif !important;
+ }
+ .expense-list h5 i {
+    font-size: 3rem !important;
+    color: var(--mainBlue);
+ }
