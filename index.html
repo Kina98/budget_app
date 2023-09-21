@@ -9,65 +9,71 @@
     <title>Budget App</title>
 </head>
 <body>
-    <section>
-        <div>
-            <h1><span>EXPENSE TRACKER</span><span><button class="reset-value" id="reset-value">Reset value</button></span></h1>
-        </div><br>
-
-        <!-- budget-form -->
-        <div>
-            <form action="" id="budget-form">
-                <h5>Please Enter Your Budget</h5>
-                <div>
-                    <input type="number" class="form-control" id="budget-input">
-                </div>
-                <button type="submit" class="btn" id="budget-submit">Calculate</button>
-            </form>
-        </div>
-
-        <!-- expense form -->
-        <div>
-            <form action="" id="expense-form">
-                <h5>Please Enter Your Expense</h5>
-                <div>
-                    <input type="number" class="form-control" id="expense-input">
-                </div>
-                <h5>Please Enter Your Expense Amount</h5>
-                <div>
-                    <input type="number" class="form-control" id="amount-input">
-                </div>
-                <button type="submit" class="btn" id="expense-submit">Add expense</button>
-            </form>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="app-info">
+    <div class="containeur">
+        <section>
             <div>
-              <h6>BUDGET</h6>
-              <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></i></span>
-              <h4><span>15 000</span><span>F</span></h4>
-           </div>
-           <div>
-              <h6>EXPENSES</h6>
-              <span class="budget-icon"><i class="far fa-credit-card"></i></i></span>
-              <h4 class="h4-2"><span>1 500</span><span>F</span></h4>
-            </div>
+                <h1><span>EXPENSE TRACKER</span><span><button class="reset-value" id="reset-value">Reset value</button></span></h1>
+            </div><br>
+    
+            <!-- budget-form -->
             <div>
-              <h6>BALANCE</h6>
-              <span class="budget-icon"><i class="fas fa-dollar-sign"></i></i></span>
-              <h4><span>13 000</span><span>F</span></h4>
+                <form action="" id="budget-form">
+                    <h5>Please Enter Your Budget</h5>
+                    <div>
+                        <input type="number" class="form-control" id="budget-input">
+                    </div>
+                    <button type="submit" class="btn" id="budget-submit">Calculate</button>
+                </form>
             </div>
-        </div>
-        <div class="expense-list">
-            <h5>Expense Title</h5>
-            <h5>Expense Value</h5>
-            <h5><i class="fa-solid fa-gear"></i></h5>
-        </div>
-    </section>
-
-
-    <section></section>
+    
+            <!-- expense form -->
+            <div>
+                <form action="" id="expense-form">
+                    <h5>Please Enter Your Expense</h5>
+                    <div>
+                        <input type="number" class="form-control" id="expense-input">
+                    </div>
+                    <h5>Please Enter Your Expense Amount</h5>
+                    <div>
+                        <input type="number" class="form-control" id="amount-input">
+                    </div>
+                    <button type="submit" class="btn" id="expense-submit">Add expense</button>
+                </form>
+            </div>
+        </section>
+    
+    
+        <section>
+            <div class="app-info">
+                <div>
+                  <h6>BUDGET</h6>
+                  <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></i></span>
+                  <h4><span>15 000</span><span>F</span></h4>
+               </div>
+               <div>
+                  <h6>EXPENSES</h6>
+                  <span class="budget-icon"><i class="far fa-credit-card"></i></i></span>
+                  <h4 class="h4-2"><span>1 500</span><span>F</span></h4>
+                </div>
+                <div>
+                  <h6>BALANCE</h6>
+                  <span class="budget-icon"><i class="fas fa-dollar-sign"></i></i></span>
+                  <h4><span>13 000</span><span>F</span></h4>
+                </div>
+            </div>
+            <div class="expense-list">
+                <h5>Expense Title</h5>
+                <h5>Expense Value</h5>
+                <h5><i class="fa-solid fa-gear"></i></h5>
+            </div>
+        </section>
+    
+    
+        <section>
+            <div class="history">
+                <h6>History</h6>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
