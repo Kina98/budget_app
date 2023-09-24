@@ -14,15 +14,15 @@
             <div>
                 <h1><span>EXPENSE TRACKER</span><span><button class="reset-value" id="reset-value">Reset value</button></span></h1>
             </div><br>
-    
+            <div class="budget-feedback alert alert-danger text-capitalize">budget feedback</div>
             <!-- budget-form -->
             <div>
-                <form action="" id="budget-form">
+                <form id="budget-form" class=" budget-form">
                     <h5>Please Enter Your Budget</h5>
                     <div>
-                        <input type="number" class="form-control" id="budget-input">
+                        <input type="number" class="budget-input" id="budget-input">
                     </div>
-                    <button type="submit" class="btn" id="budget-submit">Calculate</button>
+                    <button type="submit" class="btn budget-submit" id="budget-submit">Calculate</button>
                 </form>
             </div>
     
@@ -31,13 +31,13 @@
                 <form action="" id="expense-form">
                     <h5>Please Enter Your Expense</h5>
                     <div>
-                        <input type="number" class="form-control" id="expense-input">
+                        <input type="text" id="expense-input">
                     </div>
                     <h5>Please Enter Your Expense Amount</h5>
                     <div>
-                        <input type="number" class="form-control" id="amount-input">
+                        <input type="number" id="amount-input">
                     </div>
-                    <button type="submit" class="btn" id="expense-submit">Add expense</button>
+                    <button type="submit" id="expense-submit">Add expense</button>
                 </form>
             </div>
         </section>
@@ -48,23 +48,23 @@
                 <div>
                   <h6>BUDGET</h6>
                   <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></i></span>
-                  <h4><span>15 000</span><span>F</span></h4>
+                  <h4 id="budget"><span id="budget-amount">0</span><span> F</span></h4>
                </div>
                <div>
                   <h6>EXPENSES</h6>
                   <span class="budget-icon"><i class="far fa-credit-card"></i></i></span>
-                  <h4 class="h4-2"><span>1 500</span><span>F</span></h4>
+                  <h4 class="h4-2" id="expense"><span id="expense-amount">0</span><span> F</span></h4>
                 </div>
                 <div>
                   <h6>BALANCE</h6>
                   <span class="budget-icon"><i class="fas fa-dollar-sign"></i></i></span>
-                  <h4><span>13 000</span><span>F</span></h4>
+                  <h4 id="balance"><span id="balance-amount">0</span><span> F</span></h4>
                 </div>
             </div>
             <div class="expense-list">
-                <h5>Expense Title</h5>
-                <h5>Expense Value</h5>
-                <h5><i class="fa-solid fa-gear"></i></h5>
+                <h5 class="list-item">Expense Title</h5>
+                <h5 class="list-item">Expense Value</h5>
+                <h5 class="list-item"><i class="fa-solid fa-gear"></i></h5>
             </div>
         </section>
     
@@ -75,5 +75,8 @@
             </div>
         </section>
     </div>
+
+
+    <script src="index.js"></script>
 </body>
 </html>
