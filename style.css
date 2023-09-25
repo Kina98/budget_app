@@ -119,18 +119,65 @@ h1 {
     color: var(--mainRed) !important;
  }
 
- .expense-list {
+ #budget-list {
     display: flex;
+    width: 100%;
+    /* display: none; */
  }
- .expense-list h5 {
+ #budget-list div {
     margin: 17px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif !important;
  }
- .expense-list h5 i {
-    font-size: 3rem !important;
+ #budget-list div i {
+    font-size: 1.7rem !important;
     color: var(--mainBlue);
  }
+ .expValue {
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    font-weight: 900;
+    text-align: center;
+  }
+  #expTitleName {
+    width: 40%;
+  }
+  #expValueAmount {
+    width: 40%;
+  }
+  #edite_delete {
+    width: 40%;
+  }
+  #edite_delete i {
+    cursor: pointer;
+    font-size: 17px;
+    color: var(--mainRed);
+  }
+  #edite_delete #edit {
+    color: var(--mainGreen) !important;
+  }
+  #edite_delete button {
+    margin-left: 1px;
+    background: none;
+    border: none;
+  }
+
+  #editForm {
+    display: none;
+    width: 100%;
+  }
+  #editForm button {
+    background: #b80c09;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 10px 30px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 400;
+  }
 
  /* section history */
  .history {

@@ -61,11 +61,27 @@
                   <h4 id="balance"><span id="balance-amount">0</span><span> F</span></h4>
                 </div>
             </div>
-            <div class="expense-list">
-                <h5 class="list-item">Expense Title</h5>
-                <h5 class="list-item">Expense Value</h5>
-                <h5 class="list-item"><i class="fa-solid fa-gear"></i></h5>
+            <div id="displayExpenses">
+                <div id="budget-list">
+                    <div>Expense Title</div>
+                    <div>Expense Value</div>
+                    <div><i class="fa-solid fa-gear"></i></div>
+                </div>
+                <div id="expValue"></div>
             </div>
+            <div class="edit-form" id="editForm">
+                <form action="" id="saveEdit">
+                  <div class="">
+                    <label for="">Edit your expense</label> <br />
+                    <input type="text" id="editExpName" />
+                  </div>
+                  <div class="">
+                    <label for="">Edit expense amount</label> <br />
+                    <input type="number" id="editExpNumber" />
+                  </div>
+                  <button type="submit">Save changes</button>
+                </form>
+              </div>
         </section>
     
     

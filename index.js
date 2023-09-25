@@ -29,11 +29,12 @@ budgetForm.addEventListener("submit", (e) => {
 
 //formulaire pour le nom et le montant de la depense
 const expForm = document.getElementById("expense-form");
-const expInput = document.getElementById("expense-input");
-const amountInput = document.getElementById("amount-input");
 const expAmount = document.getElementById("expense-amount");
-console.log(expAmount);
+const displayExpenses = document.getElementById("displayExpenses");
+const expValue = document.getElementById("expValue");
 
+let expInput = document.getElementById("expense-input");
+let amountInput = document.getElementById("amount-input");
 let id = 0;
 let details = [];
 
@@ -57,15 +58,16 @@ function addExpenses(name, number) {
             amountInput.style.color = "#495057";
         }, 3000);
     } else {
-        // const userExp = {
-        //     id: id,
-        //     name: name,
-        //     number: parseInt(number),
-        // };
-        // details.push(userExp);
-        // displayExp(details);
-        // id++;
-        expAmount.innerText = number;
+        const userExp = {
+            id: id,
+            name: name,
+            number: parseInt(number),
+        };
+        details.push(userExp);
+        displayExp(details);
+        id++;
+        // expAmount.innerText = number;
+        // balanceAmount.innerText = budgetAmount.innerText - expAmount.innerText;
         expInput.value = "";
         amountInput.value = "";
     }
@@ -77,6 +79,82 @@ expForm.addEventListener("submit", (e) => {
 });
 
 
+function displayExp(details) {
+    expValue.innerHTML = null;
+    for (i = 0; i < details.length; i++) {
+      expValue.innerHTML += `
+      <div class="expValue" id="${details[i].id}">
+        <div id="expTitleName" class="exp"><p>${details[i].name}</p></div>
+        <div id="expValueAmount" class="exp"><p>${details[i].number} <span>F </span></p></div>
+        <div id="edite_delete">
+          <p>
+            <button id="${details[i].id}" onclick="editExpDetails(${details[i].id})"> <i class="fa-solid fa-pen-to-square" id="edit"></i></button> 
+            <button id="${details[i].id}" onclick="delExpenseDetails(${details[i].id})"><i class="fa-solid fa-trash"></i></button>
+          </p>
+        </div>
+      </div>
+    `;
+    }
+    calcExpenses();
+    displayExpenses.style.display = "block";
+  }
+
+  function calcExpenses() {
+    let totalExp = 0;
+    for (i = 0; i < details.length; i++) {
+      totalExp = details[i].number + totalExp;
+    }
+    expAmount.innerText = totalExp;
+    updateBalance();
+  }
+
+  function updateBalance() {
+    balanceAmount.innerText =
+      parseInt(budgetAmount.innerText) - parseInt(expAmount.innerText);
+  }
+
+  // Edit a form
+
+const editForm = document.getElementById("editForm");
+const saveEdit = document.getElementById("saveEdit");
+const editExpValue = document.getElementById("editExpValue");
+const editExpNumber = document.getElementById("editExpNumber");
+  function editExpDetails(id) {
+    expForm.style.display = "none";
+    budgetForm.style.display = "none";
+    editForm.style.display = "block";
+    details.findIndex((item) => {
+      if (item.id === id) {
+        editExpName.value = item.name;
+        editExpNumber.value = item.number;
+        saveEdit.children[2].id = item.id;
+        modal.style.display = "block";
+      }
+    });
+  }
+
+function getExpValue(editExpName, editExpNumber, id) {
+  edited = details.findIndex((obj) => obj.id == id);
+  details[edited].name = editExpName;
+  details[edited].number = parseInt(editExpNumber);
+  displayExp(details);
+}
+
+saveEdit.addEventListener("submit", (e) => {
+  e.preventDefault();
+  getExpValue(editExpName.value, editExpNumber.value, saveEdit.children[2].id);
+});
+
+  // Suppression a expense
+  function delExpenseDetails(id) {
+    let index = details.findIndex((item) => item.id === id);
+    details.splice(index, 1);
+    displayExp(details);
+  }
+
+
+
+  
 
 
 
