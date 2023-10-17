@@ -1,3 +1,4 @@
+
 // formulaire pour le budget
 const budgetAmount = document.getElementById("budget-amount");
 const balanceAmount = document.getElementById("balance-amount");
@@ -24,6 +25,8 @@ function getBudgetAmount(amount) {
 budgetForm.addEventListener("submit", (e) => {
     e.preventDefault();
     getBudgetAmount(budgetInput.value);
+
+    acceptDonnees();
 })
 
 
@@ -76,6 +79,8 @@ function addExpenses(name, number) {
 expForm.addEventListener("submit", (e) => {
     e.preventDefault();
     addExpenses(expInput.value, amountInput.value);
+
+    acceptDonnees();
 });
 
 
@@ -153,8 +158,47 @@ saveEdit.addEventListener("submit", (e) => {
   }
 
 
+  // local storage
+  let donnees = [];
+  let acceptDonnees = () => {
+    donnees.push({
+      budget: budgetInput.value,
+      expenses: expInput.value,
+      balance: amountInput.value,
+    })
 
-  
+    localStorage.setItem("donnees", JSON.stringify(donnees));
+  }
+
+
+
+  //section history and chart
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            display:false,
+            beginAtZero: true
+          },
+          x:{
+            display:false
+          }
+        }
+      }
+    });
+  });
 
 
 
@@ -166,62 +210,4 @@ saveEdit.addEventListener("submit", (e) => {
 
 
 
-// class UI {
-//     constructor() {
-//         this.budgetFeedback = document.querySelector('.budget-feedback');
-//         this.expenseFeedback = document.querySelector('.expense-feedback');
-//         this.budgetForm = document.getElementById("budget-form");
-//         this.budgetInput = document.getElementById("budget-input");
-//         this.budgetAmount = document.getElementById("budget-amount");
-//         this.expenseAmount = document.getElementById("expense-amount");
-//         this.balance = document.getElementById("balance");
-//         this.balanceAmount = document.getElementById("balance-amount");
-//         this.expenseForm = document.getElementById("expense-form");
-//         this.expenseInput = document.getElementById("expense-input");
-//         this.amountInput = document.getElementById("amount-input");
-//         this.expenseList = document.getElementById("expense-list");
-//         this.itemList = [];
-//         this.itemID = 0;
-//     }
-//     //submit budget method
-//     submitBudgetForm() {
-//         const value = this.budgetInput.value;
-//         if (value === "" || value < 0) {
-//             this.budgetFeedback.classList.add('showItem');
-//             this.budgetFeedback.innerHTML = `<p>value cannot be empty or negative</p>`;
-//             const self = this;
-//             setTimeout(function() {
-//                 self.budgetFeedback.classList.remove('showItem');
-//             }, 4000);
-//         } else {
-//             this.budgetAmount.textContent = value;
-//             this.budgetInput.value = "";
-//             this.showBalance();
-//         }
-//     }
-//     //show balance
 
-// }
-
-// function eventListenters() {
-//     const budgetForm = document.getElementById("budget-form");
-//     const expenseForm = document.getElementById("expense-form");
-//     const expenseList = document.getElementById("expense-list");
-
-//     // new instance of UI class
-//     const ui = new UI();
-
-//     //budget form submit
-//     budgetForm.addEventListener('submit', function(event) {
-//         event.preventDefault();
-//     })
-//     //expense form submit
-//     expenseForm.addEventListener('submit', function(event) {
-//         event.preventDefault();
-//     })
-//     //expense click
-//     expenseList.addEventListener('submit', function() {
-        
-//     })
-
-// }
