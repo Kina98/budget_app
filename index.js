@@ -1,10 +1,13 @@
 
 // formulaire pour le budget
+const message = document.querySelector(".message");
 const budgetAmount = document.getElementById("budget-amount");
 const balanceAmount = document.getElementById("balance-amount");
 
 const budgetInput = document.getElementById("budget-input");
 const budgetForm = document.getElementById("budget-form");
+
+
 
 function getBudgetAmount(amount) {
     if (!amount) {
@@ -20,17 +23,22 @@ function getBudgetAmount(amount) {
         balanceAmount.innerText = amount;
         budgetInput.value = "";
     }
+    //sauvegarder le budget dans le stockage local
+    setBudgetToLocalStorage(amount)
 }
 
 budgetForm.addEventListener("submit", (e) => {
     e.preventDefault();
     getBudgetAmount(budgetInput.value);
-
-    acceptDonnees();
+    message.style.display = "block";
+    setTimeout(function() {
+      message.style.display = "none";
+    }, 2000);
 })
 
 
 //formulaire pour le nom et le montant de la depense
+const message2 = document.querySelector(".message2");
 const expForm = document.getElementById("expense-form");
 const expAmount = document.getElementById("expense-amount");
 const displayExpenses = document.getElementById("displayExpenses");
@@ -40,6 +48,8 @@ let expInput = document.getElementById("expense-input");
 let amountInput = document.getElementById("amount-input");
 let id = 0;
 let details = [];
+
+
 
 function addExpenses(name, number) {
     if (!name.length || !number.length) {
@@ -74,13 +84,18 @@ function addExpenses(name, number) {
         expInput.value = "";
         amountInput.value = "";
     }
+    //Sauvegarder les depenses dans le stockage local
+    setExpensesToLocalStorage(details)
 }
 
 expForm.addEventListener("submit", (e) => {
     e.preventDefault();
     addExpenses(expInput.value, amountInput.value);
+    message2.style.display = "block";
+    setTimeout(function() {
+      message2.style.display = "none";
+    }, 2000);
 
-    acceptDonnees();
 });
 
 
@@ -98,6 +113,7 @@ function displayExp(details) {
           </p>
         </div>
       </div>
+      <hr />
     `;
     }
     calcExpenses();
@@ -159,16 +175,36 @@ saveEdit.addEventListener("submit", (e) => {
 
 
   // local storage
-  let donnees = [];
-  let acceptDonnees = () => {
-    donnees.push({
-      budget: budgetInput.value,
-      expenses: expInput.value,
-      balance: amountInput.value,
-    })
+const budgetKey = "budget";
+const expensesKey = "expenses";
 
-    localStorage.setItem("donnees", JSON.stringify(donnees));
+function getBudgetFromLocalStorage() {
+  const budget = localStorage.getItem(budgetKey);
+  if (budget) {
+    return parseInt(budget);
+  } else {
+    return 0;
   }
+}
+
+function setBudgetToLocalStorage(budget) {
+  localStorage.setItem(budgetKey, budget);
+}
+
+function getExpensesFromLocalStorage() {
+  const expenses = localStorage.getItem(expensesKey);
+  if (expenses) {
+    return JSON.parse(expenses);
+  } else {
+    return [];
+  }
+}
+
+function setExpensesToLocalStorage(expenses) {
+  localStorage.setItem(expensesKey, JSON.stringify(expenses));
+}
+
+  
 
 
 

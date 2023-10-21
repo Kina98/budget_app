@@ -36,6 +36,12 @@ h1 {
     padding: 10px;
     width: 7rem;
     margin-left: 16px;
+    cursor: pointer;
+}
+.reset-value:hover {
+  background-color: #FFC905;
+  color: black;
+  border: none;
 }
 
 #budget-form {
@@ -64,6 +70,12 @@ h1 {
     padding: 8px;
     width: 6rem;
     margin-bottom: 15px;
+    cursor: pointer;
+}
+#budget-form button:hover {
+  background-color: #229264;
+  color: white;
+  border: none;
 }
 
 #expense-form {
@@ -93,6 +105,12 @@ h1 {
     padding: 8px;
     width: 8rem;
     margin-bottom: 15px;
+    cursor: pointer;
+}
+#expense-form button:hover {
+  background-color: #D23851;
+  color: white;
+  border: none;
 }
 
 /* section two */
@@ -177,6 +195,29 @@ h1 {
     text-transform: capitalize;
     font-size: 16px;
     font-weight: 400;
+  }
+
+  hr {
+    border-color: #3BD1ED;
+  }
+
+  .message, .message2 {
+    text-align: center;
+    border: 1px solid;
+    display: none;
+  }
+  .message h3, .message2 h3 {
+    color: white;
+    background-color: #6BA7A8;
+    padding: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .message p, .message2 p {
+    background-color: white;
+    padding: 12px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
  /* section history */
