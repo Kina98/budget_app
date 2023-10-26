@@ -7,6 +7,66 @@ body {
   align-items: center;
 }
 
+.message, .message2 {
+  text-align: center;
+  border: 1px solid;
+  display: none;
+}
+.message h3, .message2 h3 {
+  color: white;
+  background-color: #6BA7A8;
+  padding: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.message p, .message2 p {
+  background-color: white;
+  padding: 12px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* section history */
+.history {
+  border-bottom: 0.5px solid var(--mainDark);
+  padding-bottom: 5rem;
+  width: 22rem;
+  text-align: center;
+}
+.history h6 {
+  border: 1px solid var(--mainDark);
+  border-radius: 3px;
+  font-size: 20px;
+  font-weight: 100;
+  padding: 8px;
+  
+}
+
+hr {
+  border-color: #3BD1ED;
+  width: 78%;
+}
+.tracker {
+  font-size: 25px;
+}
+.reset-value {
+  font-size: 10px;
+  color: rgb(254,192,11);
+  border-style: none;
+  border: 2px solid rgb(254,192,11);
+  border-radius: 6px;
+  background-color: var(--mainWhite);
+  padding: 10px;
+  width: 5rem;
+  margin-left: 16px;
+  cursor: pointer;
+}
+.reset-value:hover {
+background-color: #FFC905;
+color: black;
+border: none;
+}
+
 .danger-color {
   color: #dc3545;
 }
@@ -25,8 +85,6 @@ body {
 .primary-container {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
-  max-width: 1330px;
   box-shadow: 1px 1px 3px gray;
   padding: 10px;
   margin-top: 15px;
@@ -53,12 +111,18 @@ h3 {
   padding: 10px;
   border-radius: 5px;
 }
+.budget input{
+  border: 2px solid green;
+}
 
 .expense {
   margin-top: 25px;
   border: 2px solid red;
   padding: 10px;
   border-radius: 5px;
+}
+.expense input {
+  border: 2px solid red;
 }
 
 .col-1 {
@@ -113,6 +177,10 @@ h3 {
   text-align: center;
   font-weight: bold;
 }
+.expenses-header div i {
+  font-size: 1.7rem !important;
+  color: #05668d;
+}
 
 #expenses-list {
   display: flex;
@@ -134,8 +202,6 @@ h3 {
 input {
   width: 100%;
   margin: 0;
-  border: none;
-  box-shadow: 1px 1px 3px gray;
   border-radius: 5px;
   font-weight: bold;
   font-size: 30px;
@@ -148,7 +214,6 @@ input {
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
-  display: block;
   margin: 10px auto 0 auto;
 }
 

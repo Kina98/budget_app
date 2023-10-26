@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Budget App (Javascript & Localstorage)</title>
+    <title>Budget App</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/5127414381.js" crossorigin="anonymous"></script>
+    <title>Budget App</title>
   </head>
 
   <body>
     <main class="primary-container">
 
       <!-- BUDGET -->
+      <div>
+        <h1><span class="tracker">EXPENSE TRACKER</span><span><button class="reset-value" id="reset-value">Reset value</button></span></h1>
+    </div><br>
       <div class="sub-container">
         <div class="budget col-1">
           <h3>Please Enter Your Budget</h3>
@@ -41,6 +45,19 @@
             </div>
           </div>
         </div>
+        <div class="col-3">
+          <div class="message">
+            <h3>Ajout de budget</h3>
+            <p>Votre budget a été ajouté avec succés</p>
+        </div>
+        <div class="message2">
+            <h3>Ajout de budget</h3>
+            <p>Votre depense a été ajouté avec succés</p>
+        </div>
+        <div class="history">
+            <h6>History</h6>
+        </div>
+        </div>
       </div>
 
       <!-- EXPENSES -->
@@ -63,10 +80,16 @@
           </div>
           <div id="expenses-list"></div>
         </div>
+        <div class="col-3">
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
       </div>
     </main>
 
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>
 
